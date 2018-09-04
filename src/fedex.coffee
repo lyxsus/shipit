@@ -132,7 +132,7 @@ class FedexClient extends ShipperClient
 
   requestOptions: ({trackingNumber, reference}) ->
     method: 'POST'
-    uri: 'https://ws.fedex.com/xml'
+    uri: @options?['endpoint'] || 'https://ws.fedex.com/xml'
     body: @generateRequest trackingNumber, reference
 
 
